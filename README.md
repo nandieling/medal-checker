@@ -19,6 +19,7 @@ pt-medal-scanner.user.js
 - “检测内置站点”改为请求页面并判断是否可访问，结果是“疑似已登录/可访问”，不是精确 Cookie 检测。
 - 扫描请求使用 `GM_xmlhttpRequest`，浏览器会随对应站点请求携带已有登录 Cookie。
 - 定时任务只有在装载脚本的网页保持打开时才会执行；油猴没有 Chrome 扩展后台 service worker 那样的常驻后台。
+- 增加了检测失败展示和跳转
 
 ## 保留功能
 
