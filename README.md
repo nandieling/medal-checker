@@ -11,7 +11,7 @@ pt-medal-scanner.user.js
 1. 打开 Tampermonkey 管理面板。
 2. 新建脚本。
 3. 将 `pt-medal-scanner.user.js` 的内容粘贴进去并保存。
-4. 打开任意网页，右下角会出现 `PT` 按钮，也可以从 Tampermonkey 菜单选择“打开 PT 勋章扫描器”。
+4. 打开任意网页，右下角会出现 勋章按钮，也可以从 Tampermonkey 菜单选择“打开 PT 勋章扫描器”。
 
 ## 和 Chrome 扩展版的差异
 
