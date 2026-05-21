@@ -3,7 +3,7 @@
 油猴脚本文件：
 
 ```text
-tampermonkey/pt-medal-scanner.user.js
+pt-medal-scanner.user.js
 ```
 
 ## 安装
