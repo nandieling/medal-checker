@@ -121,12 +121,11 @@ const extractMedalsFromBuyCenter = (html) => {
 const extractMedalsFromCards = (html) => {
   const medals = [];
   const cards = [];
-  let pos = 0;
+  const cardTagRegex = /<div[^>]*\bclass=["']medal-card\b[^>]*>/gi;
+  let cardMatch;
 
-  while (pos < html.length) {
-    const cardStart = html.indexOf('<div class="medal-card ', pos);
-    if (cardStart < 0) break;
-
+  while ((cardMatch = cardTagRegex.exec(html)) !== null) {
+    const cardStart = cardMatch.index;
     let d = 0;
     let cardEnd = -1;
     for (let i = cardStart; i < html.length; i++) {
@@ -142,49 +141,87 @@ const extractMedalsFromCards = (html) => {
         i = tagEnd;
       }
     }
-
     if (cardEnd > 0) {
       cards.push(html.substring(cardStart, cardEnd));
-      pos = cardEnd;
-    } else break;
+    }
   }
 
   for (const card of cards) {
-    const actionMatch = card.match(/<(?:input|button)[^>]*\bclass="btn buy[^"]*"[^>]*\/?\s*>/i);
+    const actionMatch = card.match(/<(?:input|button)[^>]*\bclass="([^"]*\bbuy\b[^"]*)"[^>]*\/?\s*>/i);
     if (!actionMatch) continue;
 
     const actionHtml = actionMatch[0];
     const isButton = actionHtml.startsWith('<button');
 
+    let hasPurchaseText = false;
     if (isButton) {
       const btnClose = card.indexOf('</button>', actionMatch.index);
       if (btnClose < 0) continue;
       const btnText = card.substring(actionMatch.index + actionHtml.length, btnClose).trim();
-      if (!btnText.includes('购买') && !btnText.includes('購買')) continue;
+      if (btnText.includes('购买') || btnText.includes('購買')) hasPurchaseText = true;
     } else {
-      if (!actionHtml.includes('value="购买"') && !actionHtml.includes('value="購買"')) continue;
+      if (actionHtml.includes('value="购买"') || actionHtml.includes('value="購買"')) hasPurchaseText = true;
     }
+    if (!hasPurchaseText) continue;
 
     if (actionHtml.includes('disabled')) continue;
 
     const dataIdMatch = actionHtml.match(/data-id="(\d+)"/);
     const medalId = dataIdMatch ? dataIdMatch[1] : '';
 
-    const nameMatch = card.match(/<div class="medal-name">([\s\S]*?)<\/div>/);
-    const name = nameMatch ? nameMatch[1].trim() : '';
+    let name = '';
+    const namePattern = /<(?:h[1-4]|div|span)\s+class="(?:medal-name|medal-title|medal-card__name)"[^>]*>([\s\S]*?)<\/(?:h[1-4]|div|span)>/i;
+    const nameMatch = card.match(namePattern);
+    if (nameMatch) {
+      name = nameMatch[1].trim();
+    } else {
+      const imgAlt = card.match(/<img[^>]*\balt="([^"]*)"[^>]*>/i);
+      if (imgAlt) name = imgAlt[1].trim();
+    }
+    if (!name) {
+      const fallbackH = card.match(/<h([1-4])[^>]*>([\s\S]*?)<\/h\1>/i);
+      if (fallbackH) name = fallbackH[2].replace(/<[^>]+>/g, '').trim().replace(/\s*\(#\d+\)\s*$/, '');
+    }
 
     let price = '', duration = '', bonus = '', stock = '', timeRange = '';
-    const fieldPairs = card.match(/<strong>([^<]+)<\/strong>([\s\S]*?)<\/div>/g) || [];
-    for (const pair of fieldPairs) {
-      const labelMatch = pair.match(/<strong>([^<]+)<\/strong>/);
-      const val = pair.replace(/<[^>]+>/g, '').replace(/：/g, ':').replace(/^[^:]*[:：]\s*/, '').trim();
-      if (!labelMatch) continue;
-      const label = labelMatch[1].replace(/[：:]/g, '').trim();
-      if (label.includes('价格') || label.includes('價格')) price = val;
-      else if (label.includes('有效期')) duration = val;
-      else if (label.includes('加成')) bonus = val;
-      else if (label.includes('库存') || label.includes('庫存')) stock = val;
-      else if (label.includes('可购买') || label.includes('可購買')) timeRange = val;
+    const labelValuePatterns = [
+      /<span\s+class="detail-label">([^<]*)<\/span>\s*<span\s+class="detail-value">([^<]*)<\/span>/gi,
+      /<span\s+class="meta-label">([^<]*)<\/span>\s*<span\s+class="meta-value">([^<]*)<\/span>/gi,
+      /<span\s+class="medal-card__label">([^<]*)<\/span>\s*<span\s+class="medal-card__value">([^<]*)<\/span>/gi,
+      /<div\s+class="meta-label">([^<]*)<\/div>\s*<div\s+class="meta-value">([^<]*)<\/div>/gi,
+      /<span\s+class="stat-label">([^<]*)<\/span>\s*<span\s+class="stat-value">([^<]*)<\/span>/gi
+    ];
+
+    for (const lvRegex of labelValuePatterns) {
+      lvRegex.lastIndex = 0;
+      let lvMatch;
+      while ((lvMatch = lvRegex.exec(card)) !== null) {
+        const label = lvMatch[1].trim();
+        const val = lvMatch[2].trim();
+        if (label.includes('价格') || label.includes('價格')) price = val;
+        else if (label.includes('有效期')) duration = val;
+        else if (label.includes('加成')) bonus = val;
+        else if (label.includes('库存') || label.includes('庫存')) stock = val;
+        else if (label.includes('可购买') || label.includes('可購買')) timeRange = val;
+      }
+    }
+
+    if (!price && !duration && !bonus && !stock && !timeRange) {
+      const fieldPairs = card.match(/<strong>([^<]+)<\/strong>([\s\S]*?)<\/div>/g) || [];
+      for (const pair of fieldPairs) {
+        const labelMatch = pair.match(/<strong>([^<]+)<\/strong>/);
+        if (!labelMatch) continue;
+        const label = labelMatch[1].replace(/[：:]/g, '').trim();
+        let val = pair.replace(/<[^>]+>/g, '');
+        const labelClean = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        val = val.replace(new RegExp('^' + labelClean + '\\s*[:：]?\\s*'), '').trim();
+        if (!val) val = pair.replace(/<[^>]+>/g, '').replace(/：/g, ':').replace(/^[^:]*[:：]\s*/, '').trim();
+        if (label.includes('价格') || label.includes('價格')) price = val;
+        else if (label.includes('有效期')) duration = val;
+        else if (label.includes('加成')) bonus = val;
+        else if (label.includes('库存') || label.includes('庫存')) stock = val;
+        else if (label.includes('可购买') || label.includes('可購買')) timeRange = val;
+      }
     }
 
     if (name) medals.push({ name, price, duration, bonus, stock, timeRange, medalId });

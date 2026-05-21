@@ -678,6 +678,71 @@ test('卡片布局无容器返回空数组', () => {
   assertEqual(medals.length, 0);
 });
 
+test('卡片布局 h3 名称 + 元标签字段', () => {
+  const html = '<div class="medal-card"><div class="medal-image"><img src="a.png" alt="花"></div><h3 class="medal-name">花</h3><div class="medal-meta"><div class="meta-row"><span class="meta-label">可购买时间:</span><span class="meta-value">不限</span></div><div class="meta-row"><span class="meta-label">购买后有效期(天):</span><span class="meta-value">1</span></div><div class="meta-row"><span class="meta-label">工分加成:</span><span class="meta-value">10%</span></div><div class="meta-row"><span class="meta-label">价格:</span><span class="meta-value">100</span></div></div><div class="medal-action"><input type="button" class="btn-buy buy" data-id="1" value="购买"></div></div>';
+  const medals = bg.extractMedalsFromCards(html);
+  assertEqual(medals.length, 1);
+  assert(medals[0].name.includes('花'));
+  assertEqual(medals[0].price, '100');
+  assertEqual(medals[0].duration, '1');
+  assertEqual(medals[0].bonus, '10%');
+});
+
+test('卡片布局 h4 名称 + img alt 回退', () => {
+  const html = '<div class="medal-card"><div class="medal-image"><img src="a.png" alt="好运连连"></div><h4 class="medal-name">好运连连</h4><div class="medal-info"><div><strong>可购买时间：</strong>不限</div><div><strong>价格：</strong>50</div></div><input type="button" class="btn btn-primary buy-btn" data-id="1" value="购买"></div>';
+  const medals = bg.extractMedalsFromCards(html);
+  assertEqual(medals.length, 1);
+  assert(medals[0].name.includes('好运连连'));
+  assertEqual(medals[0].price, '50');
+});
+
+test('卡片布局 medal-title 名称', () => {
+  const html = '<div class="medal-card"><div class="medal-title">白露</div><div class="medal-details"><div class="medal-detail-item"><strong>可购买时间</strong>不限~2026</div><div class="medal-detail-item"><strong>价格</strong>120</div></div><input class="action-btn btn-primary buy" data-id="1" value="购买"></div>';
+  const medals = bg.extractMedalsFromCards(html);
+  assertEqual(medals.length, 1);
+  assert(medals[0].name.includes('白露'));
+  assertEqual(medals[0].price, '120');
+});
+
+test('卡片布局 medal-card__name 名称', () => {
+  const html = '<div class="medal-card"><div class="medal-card__name">立春</div><div class="meta-label">价格</div><div class="meta-value">200</div><div class="meta-label">有效期</div><div class="meta-value">30天</div><input class="btn primary btn-buy" data-id="1" value="购买"></div>';
+  const medals = bg.extractMedalsFromCards(html);
+  assertEqual(medals.length, 1);
+  assert(medals[0].name.includes('立春'));
+  assertEqual(medals[0].price, '200');
+  assertEqual(medals[0].duration, '30天');
+});
+
+test('卡片布局 medal-card__label 字段', () => {
+  const html = '<div class="medal-card"><div class="medal-card__title"><h2>维护勋章</h2></div><div class="medal-card__meta"><div><span class="medal-card__label">可购买时间</span><span class="medal-card__value">不限</span></div><div><span class="medal-card__label">价格</span><span class="medal-card__value">888</span></div></div><input class="btn buy" data-id="1" value="购买"></div>';
+  const medals = bg.extractMedalsFromCards(html);
+  assertEqual(medals.length, 1);
+  assertEqual(medals[0].price, '888');
+});
+
+test('卡片布局 stat-label 字段', () => {
+  const html = '<div class="medal-card"><div class="medal-name">测试</div><div class="stats-grid"><div class="stat-item"><span class="stat-label">可购买时间</span><span class="stat-value">不限</span></div><div class="stat-item"><span class="stat-label">价格</span><span class="stat-value">300</span></div></div><input class="btn btn-primary buy-btn" data-id="1" value="购买"></div>';
+  const medals = bg.extractMedalsFromCards(html);
+  assertEqual(medals.length, 1);
+  assertEqual(medals[0].price, '300');
+});
+
+test('卡片布局 detail-label 字段 (longpt)', () => {
+  const html = '<div class="medal-card"><div class="medal-name">小满</div><div class="medal-details"><div class="detail-item"><span class="detail-label">可购买时间</span><span class="detail-value">不限</span></div><div class="detail-item"><span class="detail-label">价格</span><span class="detail-value">24000</span></div></div><input class="medal-action-btn-unified buy" data-id="78" value="购买"></div>';
+  const medals = bg.extractMedalsFromCards(html);
+  assertEqual(medals.length, 1);
+  assert(medals[0].name.includes('小满'));
+  assertEqual(medals[0].price, '24000');
+  assertEqual(medals[0].medalId, '78');
+});
+
+test('卡片布局 img alt 回退名称', () => {
+  const html = '<div class="medal-card"><div class="medal-image"><img src="a.png" alt="无名称标签勋章"></div><div class="medal-info"><div><strong>可购买时间：</strong>不限</div><div><strong>价格：</strong>100</div></div><input class="btn buy" data-id="1" value="购买"></div>';
+  const medals = bg.extractMedalsFromCards(html);
+  assertEqual(medals.length, 1);
+  assert(medals[0].name.includes('无名称标签勋章'));
+});
+
 // ============================================================
 // setupAlarm
 // ============================================================

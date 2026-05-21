@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-20T00:16:28.769Z",
-  "sourceFile": "PT_Debug_2026-05-19.json",
-  "totalPages": 97,
+  "generatedAt": "2026-05-21T01:29:10.413Z",
+  "sourceFile": "PT_Debug_2026-05-21.json",
+  "totalPages": 106,
   "sites": [
     {
       "url": "https://1ptba.com/medal.php",
@@ -15,7 +15,7 @@
       "url": "https://audiences.me/medal_center.php",
       "domain": "audiences.me",
       "path": "/medal_center.php",
-      "htmlBytes": 93157,
+      "htmlBytes": 93251,
       "medalCount": 0,
       "medals": []
     },
@@ -23,7 +23,7 @@
       "url": "https://springsunday.net/badges.php",
       "domain": "springsunday.net",
       "path": "/badges.php",
-      "htmlBytes": 65166,
+      "htmlBytes": 65087,
       "medalCount": 0,
       "medals": []
     },
@@ -31,7 +31,7 @@
       "url": "https://carpt.net/medal.php",
       "domain": "carpt.net",
       "path": "/medal.php",
-      "htmlBytes": 13849,
+      "htmlBytes": 13848,
       "medalCount": 0,
       "medals": []
     },
@@ -39,7 +39,7 @@
       "url": "https://discfan.net/medal.php",
       "domain": "discfan.net",
       "path": "/medal.php",
-      "htmlBytes": 14803,
+      "htmlBytes": 13133,
       "medalCount": 0,
       "medals": []
     },
@@ -55,7 +55,7 @@
       "url": "https://greatposterwall.com/medal.php",
       "domain": "greatposterwall.com",
       "path": "/medal.php",
-      "htmlBytes": 26240,
+      "htmlBytes": 26238,
       "medalCount": 0,
       "medals": []
     },
@@ -71,7 +71,7 @@
       "url": "https://hdtime.org/medal.php",
       "domain": "hdtime.org",
       "path": "/medal.php",
-      "htmlBytes": 16815,
+      "htmlBytes": 16814,
       "medalCount": 0,
       "medals": []
     },
@@ -95,7 +95,7 @@
       "url": "https://www.hitpt.com/medal.php",
       "domain": "www.hitpt.com",
       "path": "/medal.php",
-      "htmlBytes": 10043,
+      "htmlBytes": 10045,
       "medalCount": 0,
       "medals": []
     },
@@ -103,7 +103,7 @@
       "url": "http://www.oshen.win/medal.php",
       "domain": "www.oshen.win",
       "path": "/medal.php",
-      "htmlBytes": 19,
+      "htmlBytes": 8138,
       "medalCount": 0,
       "medals": []
     },
@@ -119,7 +119,7 @@
       "url": "https://totheglory.im/mall.php?cid=5",
       "domain": "totheglory.im",
       "path": "/mall.php",
-      "htmlBytes": 23929,
+      "htmlBytes": 30720,
       "medalCount": 0,
       "medals": []
     },
@@ -156,10 +156,26 @@
       "medals": []
     },
     {
+      "url": "https://xingtan.one/medal.php",
+      "domain": "xingtan.one",
+      "path": "/medal.php",
+      "htmlBytes": 48851,
+      "medalCount": 0,
+      "medals": []
+    },
+    {
+      "url": "https://xingtan.one/medal.php?page=1",
+      "domain": "xingtan.one",
+      "path": "/medal.php",
+      "htmlBytes": 43538,
+      "medalCount": 0,
+      "medals": []
+    },
+    {
       "url": "https://www.okpt.net/medal.php",
       "domain": "www.okpt.net",
       "path": "/medal.php",
-      "htmlBytes": 22144,
+      "htmlBytes": 22143,
       "medalCount": 0,
       "medals": []
     },
@@ -191,7 +207,7 @@
       "url": "https://pandapt.net/medal.php",
       "domain": "pandapt.net",
       "path": "/medal.php",
-      "htmlBytes": 27473,
+      "htmlBytes": 27477,
       "medalCount": 0,
       "medals": []
     },
@@ -258,7 +274,7 @@
       "url": "https://ptcafe.club/medal.php",
       "domain": "ptcafe.club",
       "path": "/medal.php",
-      "htmlBytes": 10184,
+      "htmlBytes": 10185,
       "medalCount": 0,
       "medals": []
     },
@@ -341,9 +357,28 @@
       "url": "https://ptlgs.org/medal.php",
       "domain": "ptlgs.org",
       "path": "/medal.php",
-      "htmlBytes": 55857,
-      "medalCount": 0,
-      "medals": []
+      "htmlBytes": 55826,
+      "medalCount": 2,
+      "medals": [
+        {
+          "name": "小满☆节气",
+          "price": "",
+          "duration": "90",
+          "bonus": "10%",
+          "stock": "2751",
+          "timeRange": "2026-05-21 ~ 2026-06-21",
+          "medalId": "62"
+        },
+        {
+          "name": "劳动☆节日",
+          "price": "",
+          "duration": "90",
+          "bonus": "10%",
+          "stock": "2637",
+          "timeRange": "2026-05-01 ~ 2026-05-31",
+          "medalId": "57"
+        }
+      ]
     },
     {
       "url": "https://ptlgs.org/medal.php?page=1",
@@ -357,7 +392,7 @@
       "url": "https://njtupt.top/medal.php",
       "domain": "njtupt.top",
       "path": "/medal.php",
-      "htmlBytes": 11594,
+      "htmlBytes": 11592,
       "medalCount": 0,
       "medals": []
     },
@@ -365,7 +400,7 @@
       "url": "https://ubits.club/medal.php",
       "domain": "ubits.club",
       "path": "/medal.php",
-      "htmlBytes": 46818,
+      "htmlBytes": 46821,
       "medalCount": 0,
       "medals": []
     },
@@ -373,7 +408,7 @@
       "url": "https://ubits.club/medal.php?page=1",
       "domain": "ubits.club",
       "path": "/medal.php",
-      "htmlBytes": 46758,
+      "htmlBytes": 46761,
       "medalCount": 0,
       "medals": []
     },
@@ -381,7 +416,7 @@
       "url": "https://ubits.club/medal.php?page=2",
       "domain": "ubits.club",
       "path": "/medal.php",
-      "htmlBytes": 39052,
+      "htmlBytes": 39055,
       "medalCount": 0,
       "medals": []
     },
@@ -630,7 +665,7 @@
       "url": "https://hdbao.cc/medal.php",
       "domain": "hdbao.cc",
       "path": "/medal.php",
-      "htmlBytes": 13658,
+      "htmlBytes": 13300,
       "medalCount": 0,
       "medals": []
     },
@@ -686,7 +721,7 @@
       "url": "https://zmpt.cc/medal.php",
       "domain": "zmpt.cc",
       "path": "/medal.php",
-      "htmlBytes": 19845,
+      "htmlBytes": 20158,
       "medalCount": 0,
       "medals": []
     },
@@ -694,7 +729,7 @@
       "url": "https://www.hdkyl.in/medal.php",
       "domain": "www.hdkyl.in",
       "path": "/medal.php",
-      "htmlBytes": 52212,
+      "htmlBytes": 52214,
       "medalCount": 0,
       "medals": []
     },
@@ -710,7 +745,7 @@
       "url": "https://www.agsvpt.com/medal.php",
       "domain": "www.agsvpt.com",
       "path": "/medal.php",
-      "htmlBytes": 122820,
+      "htmlBytes": 122384,
       "medalCount": 0,
       "medals": []
     },
@@ -726,43 +761,23 @@
       "url": "https://pt.xingyungept.org/medal.php",
       "domain": "pt.xingyungept.org",
       "path": "/medal.php",
-      "htmlBytes": 61767,
-      "medalCount": 1,
-      "medals": [
-        {
-          "name": "小寒",
-          "price": "100,000",
-          "duration": "永久有效",
-          "bonus": "0%",
-          "stock": "无限",
-          "timeRange": "不限",
-          "medalId": ""
-        }
-      ]
+      "htmlBytes": 61884,
+      "medalCount": 0,
+      "medals": []
     },
     {
       "url": "https://pt.xingyungept.org/medal.php?page=1",
       "domain": "pt.xingyungept.org",
       "path": "/medal.php",
-      "htmlBytes": 61825,
-      "medalCount": 1,
-      "medals": [
-        {
-          "name": "处暑 残暑扫除一雨空，时临秋色渐浓融",
-          "price": "80,000",
-          "duration": "永久有效",
-          "bonus": "0%",
-          "stock": "无限",
-          "timeRange": "不限",
-          "medalId": ""
-        }
-      ]
+      "htmlBytes": 62113,
+      "medalCount": 0,
+      "medals": []
     },
     {
       "url": "https://pt.xingyungept.org/medal.php?page=2",
       "domain": "pt.xingyungept.org",
       "path": "/medal.php",
-      "htmlBytes": 61116,
+      "htmlBytes": 61454,
       "medalCount": 0,
       "medals": []
     },
@@ -770,7 +785,7 @@
       "url": "https://pt.xingyungept.org/medal.php?page=3",
       "domain": "pt.xingyungept.org",
       "path": "/medal.php",
-      "htmlBytes": 61863,
+      "htmlBytes": 61963,
       "medalCount": 0,
       "medals": []
     },
@@ -778,7 +793,7 @@
       "url": "https://pt.xingyungept.org/medal.php?page=4",
       "domain": "pt.xingyungept.org",
       "path": "/medal.php",
-      "htmlBytes": 26352,
+      "htmlBytes": 26356,
       "medalCount": 0,
       "medals": []
     },
@@ -787,8 +802,81 @@
       "domain": "cspt.top",
       "path": "/medal.php",
       "htmlBytes": 152724,
-      "medalCount": 0,
-      "medals": []
+      "medalCount": 8,
+      "medals": [
+        {
+          "name": "岁首华章",
+          "price": "",
+          "duration": "",
+          "bonus": "",
+          "stock": "",
+          "timeRange": "",
+          "medalId": "62"
+        },
+        {
+          "name": "女财神套装-姻缘与家族财富之神-和合二仙",
+          "price": "",
+          "duration": "",
+          "bonus": "",
+          "stock": "",
+          "timeRange": "",
+          "medalId": "20"
+        },
+        {
+          "name": "女财神套装-地域性女财神-金花娘娘",
+          "price": "",
+          "duration": "",
+          "bonus": "",
+          "stock": "",
+          "timeRange": "",
+          "medalId": "19"
+        },
+        {
+          "name": "女财神套装-行业专属财富神-蚕花娘娘",
+          "price": "",
+          "duration": "",
+          "bonus": "",
+          "stock": "",
+          "timeRange": "",
+          "medalId": "17"
+        },
+        {
+          "name": "等级勋章-5_财源广进",
+          "price": "",
+          "duration": "",
+          "bonus": "",
+          "stock": "",
+          "timeRange": "",
+          "medalId": "18"
+        },
+        {
+          "name": "等级勋章-4_福星高照",
+          "price": "",
+          "duration": "",
+          "bonus": "",
+          "stock": "",
+          "timeRange": "",
+          "medalId": "16"
+        },
+        {
+          "name": "等级勋章-3_金银使者",
+          "price": "",
+          "duration": "",
+          "bonus": "",
+          "stock": "",
+          "timeRange": "",
+          "medalId": "12"
+        },
+        {
+          "name": "等级勋章-2_聚宝学徒",
+          "price": "",
+          "duration": "",
+          "bonus": "",
+          "stock": "",
+          "timeRange": "",
+          "medalId": "11"
+        }
+      ]
     },
     {
       "url": "https://qingwapt.com/medal.php",
@@ -802,7 +890,7 @@
       "url": "https://www.ptskit.com/medal.php",
       "domain": "www.ptskit.com",
       "path": "/medal.php",
-      "htmlBytes": 25594,
+      "htmlBytes": 25668,
       "medalCount": 0,
       "medals": []
     },
@@ -810,7 +898,7 @@
       "url": "https://www.ptskit.com/medal.php?page=1",
       "domain": "www.ptskit.com",
       "path": "/medal.php",
-      "htmlBytes": 25527,
+      "htmlBytes": 25604,
       "medalCount": 0,
       "medals": []
     },
@@ -818,7 +906,7 @@
       "url": "https://www.ptskit.com/medal.php?page=2",
       "domain": "www.ptskit.com",
       "path": "/medal.php",
-      "htmlBytes": 22633,
+      "htmlBytes": 23278,
       "medalCount": 0,
       "medals": []
     },
@@ -826,7 +914,7 @@
       "url": "https://cc.mypt.cc//medal.php",
       "domain": "cc.mypt.cc",
       "path": "//medal.php",
-      "htmlBytes": 15325,
+      "htmlBytes": 15640,
       "medalCount": 0,
       "medals": []
     },
@@ -842,7 +930,7 @@
       "url": "https://si-qi.xyz/medal.php",
       "domain": "si-qi.xyz",
       "path": "/medal.php",
-      "htmlBytes": 171938,
+      "htmlBytes": 171937,
       "medalCount": 0,
       "medals": []
     },
@@ -850,28 +938,9 @@
       "url": "https://13city.org/medal.php",
       "domain": "13city.org",
       "path": "/medal.php",
-      "htmlBytes": 141633,
-      "medalCount": 2,
-      "medals": [
-        {
-          "name": "小满",
-          "price": "24,000",
-          "duration": "365",
-          "bonus": "0.5%",
-          "stock": "无限",
-          "timeRange": "",
-          "medalId": "78"
-        },
-        {
-          "name": "攒VIP专用",
-          "price": "10,000",
-          "duration": "30",
-          "bonus": "1.5%",
-          "stock": "无限",
-          "timeRange": "",
-          "medalId": "9"
-        }
-      ]
+      "htmlBytes": 141644,
+      "medalCount": 0,
+      "medals": []
     },
     {
       "url": "https://www.htpt.cc/buycenter.php",
@@ -893,7 +962,7 @@
           "price": "1,000,000",
           "duration": "永久有效",
           "bonus": "2%",
-          "stock": "52",
+          "stock": "51",
           "timeRange": "不限",
           "medalId": ""
         }
@@ -919,7 +988,7 @@
       "url": "https://duckboobee.org/medal.php",
       "domain": "duckboobee.org",
       "path": "/medal.php",
-      "htmlBytes": 48763,
+      "htmlBytes": 48765,
       "medalCount": 0,
       "medals": []
     },
@@ -927,7 +996,7 @@
       "url": "https://www.hxpt.org/medal.php",
       "domain": "www.hxpt.org",
       "path": "/medal.php",
-      "htmlBytes": 287605,
+      "htmlBytes": 287603,
       "medalCount": 0,
       "medals": []
     },
@@ -943,9 +1012,352 @@
       "url": "https://pt.luckpt.de/medal.php",
       "domain": "pt.luckpt.de",
       "path": "/medal.php",
-      "htmlBytes": 118241,
-      "medalCount": 0,
-      "medals": []
+      "htmlBytes": 119449,
+      "medalCount": 38,
+      "medals": [
+        {
+          "name": "立春",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "74",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "93"
+        },
+        {
+          "name": "雨水",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "80",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "102"
+        },
+        {
+          "name": "惊蛰",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "85",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "92"
+        },
+        {
+          "name": "春分",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "83",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "86"
+        },
+        {
+          "name": "谷雨",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "29",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "91"
+        },
+        {
+          "name": "立夏",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "34",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "95"
+        },
+        {
+          "name": "小满",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "50",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "100"
+        },
+        {
+          "name": "秋分",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "83",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "54"
+        },
+        {
+          "name": "寒露",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "88",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "77"
+        },
+        {
+          "name": "霜降",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "89",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "78"
+        },
+        {
+          "name": "小雪",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "91",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "82"
+        },
+        {
+          "name": "大雪",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "94",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "89"
+        },
+        {
+          "name": "小寒",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "92",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "99"
+        },
+        {
+          "name": "梓川枫-勋章",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "13",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "129"
+        },
+        {
+          "name": "双叶理央-勋章",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "16",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "123"
+        },
+        {
+          "name": "牧之原翔子-勋章",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "22",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "120"
+        },
+        {
+          "name": "古贺朋绘-勋章",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "26",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "117"
+        },
+        {
+          "name": "丰滨和花-勋章",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "30",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "114"
+        },
+        {
+          "name": "梓川咲太-名片",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "23",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "131"
+        },
+        {
+          "name": "梓川枫-名片",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "27",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "128"
+        },
+        {
+          "name": "樱岛麻衣-名片",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "26",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "125"
+        },
+        {
+          "name": "双叶理央-名片",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "34",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "122"
+        },
+        {
+          "name": "牧之原翔子-名片",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "34",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "119"
+        },
+        {
+          "name": "古贺朋绘-名片",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "33",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "116"
+        },
+        {
+          "name": "丰浜和花-名片",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "36",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "113"
+        },
+        {
+          "name": "2026-青年节-plus",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "38",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "150"
+        },
+        {
+          "name": "2026-青年节",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "48",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "149"
+        },
+        {
+          "name": "2026-劳动节-plus",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "25",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "148"
+        },
+        {
+          "name": "2026-清明节-plus",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "22",
+          "timeRange": "2026-04-03 18:00:00 ~ 不限",
+          "medalId": "146"
+        },
+        {
+          "name": "2026-清明节",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "48",
+          "timeRange": "2026-04-03 18:00:00 ~ 不限",
+          "medalId": "145"
+        },
+        {
+          "name": "2026-愚人节",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "41",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "143"
+        },
+        {
+          "name": "2026-植树节",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "30",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "141"
+        },
+        {
+          "name": "2026-妇女节",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "40",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "139"
+        },
+        {
+          "name": "2026-元宵节",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "39",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "138"
+        },
+        {
+          "name": "2026-情人节",
+          "price": "68,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "39",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "135"
+        },
+        {
+          "name": "宋玉-2",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "21",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "29"
+        },
+        {
+          "name": "兔田佩科拉×绮罗罗薇薇",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "56",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "35"
+        },
+        {
+          "name": "蔚蓝档案-泳装都子",
+          "price": "88,888",
+          "duration": "永久有效",
+          "bonus": "",
+          "stock": "55",
+          "timeRange": "不限 ~ 不限",
+          "medalId": "52"
+        }
+      ]
     },
     {
       "url": "https://pt.novahd.top/medal.php",
@@ -1041,7 +1453,7 @@
       "url": "https://zrpt.cc/medal.php",
       "domain": "zrpt.cc",
       "path": "/medal.php",
-      "htmlBytes": 17266,
+      "htmlBytes": 17265,
       "medalCount": 0,
       "medals": []
     },
@@ -1049,7 +1461,7 @@
       "url": "https://p.t-baozi.cc/medal.php",
       "domain": "p.t-baozi.cc",
       "path": "/medal.php",
-      "htmlBytes": 28936,
+      "htmlBytes": 28935,
       "medalCount": 0,
       "medals": []
     },
@@ -1065,7 +1477,7 @@
       "url": "https://www.momentpt.top/medal.php",
       "domain": "www.momentpt.top",
       "path": "/medal.php",
-      "htmlBytes": 241363,
+      "htmlBytes": 241148,
       "medalCount": 0,
       "medals": []
     },
@@ -1076,11 +1488,132 @@
       "htmlBytes": 13459,
       "medalCount": 0,
       "medals": []
+    },
+    {
+      "url": "https://dstudio.me/medal.php",
+      "domain": "dstudio.me",
+      "path": "/medal.php",
+      "htmlBytes": 12588,
+      "medalCount": 0,
+      "medals": []
+    },
+    {
+      "url": "https://www.musopia.vip/medal.php",
+      "domain": "www.musopia.vip",
+      "path": "/medal.php",
+      "htmlBytes": 9007,
+      "medalCount": 0,
+      "medals": []
+    },
+    {
+      "url": "https://ptlao.top/medal.php",
+      "domain": "ptlao.top",
+      "path": "/medal.php",
+      "htmlBytes": 11814,
+      "medalCount": 0,
+      "medals": []
+    },
+    {
+      "url": "https://longpt.org/medal.php",
+      "domain": "longpt.org",
+      "path": "/medal.php",
+      "htmlBytes": 55229,
+      "medalCount": 6,
+      "medals": [
+        {
+          "name": "两万种纪念",
+          "price": "120,000",
+          "duration": "永久有效",
+          "bonus": "1.2%",
+          "stock": "无限",
+          "timeRange": "",
+          "medalId": "200"
+        },
+        {
+          "name": "五一国际劳动节",
+          "price": "100,051",
+          "duration": "永久有效",
+          "bonus": "1%",
+          "stock": "无限",
+          "timeRange": "",
+          "medalId": "197"
+        },
+        {
+          "name": "2026情人节",
+          "price": "260,214",
+          "duration": "永久有效",
+          "bonus": "1%",
+          "stock": "无限",
+          "timeRange": "",
+          "medalId": "196"
+        },
+        {
+          "name": "元宵节",
+          "price": "200,303",
+          "duration": "永久有效",
+          "bonus": "1%",
+          "stock": "无限",
+          "timeRange": "",
+          "medalId": "195"
+        },
+        {
+          "name": "马年春节",
+          "price": "260,101",
+          "duration": "永久有效",
+          "bonus": "2%",
+          "stock": "无限",
+          "timeRange": "",
+          "medalId": "194"
+        },
+        {
+          "name": "腊八节",
+          "price": "202,508",
+          "duration": "永久有效",
+          "bonus": "1%",
+          "stock": "无限",
+          "timeRange": "",
+          "medalId": "193"
+        }
+      ]
+    },
+    {
+      "url": "https://longpt.org/medal.php?page=1",
+      "domain": "longpt.org",
+      "path": "/medal.php",
+      "htmlBytes": 55753,
+      "medalCount": 0,
+      "medals": []
+    },
+    {
+      "url": "https://longpt.org/medal.php?page=2",
+      "domain": "longpt.org",
+      "path": "/medal.php",
+      "htmlBytes": 57330,
+      "medalCount": 1,
+      "medals": [
+        {
+          "name": "小满",
+          "price": "260,521",
+          "duration": "永久有效",
+          "bonus": "5%",
+          "stock": "无限",
+          "timeRange": "",
+          "medalId": "31"
+        }
+      ]
+    },
+    {
+      "url": "https://longpt.org/medal.php?page=3",
+      "domain": "longpt.org",
+      "path": "/medal.php",
+      "htmlBytes": 44793,
+      "medalCount": 0,
+      "medals": []
     }
   ],
   "summary": {
-    "sitesWithMedals": 10,
-    "totalMedals": 32,
-    "pagesWithoutMedals": 87
+    "sitesWithMedals": 12,
+    "totalMedals": 83,
+    "pagesWithoutMedals": 94
   }
 }
