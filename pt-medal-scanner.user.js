@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PT勋章扫描器
 // @namespace    https://github.com/schalkiii/medal-checker
-// @version      1.0.0
+// @version      1.3.0
 // @description  油猴版 PT 勋章扫描器，批量检测 PT 站点可购买勋章
 // @author       medal-checker
 // @match        http://*/*
@@ -31,75 +31,75 @@
   const DETECT_TIMEOUT = 15000;
 
   const DEFAULT_SITES = [
-    '春天|https://springsunday.net/badges.php',
-    '杜比|https://www.hddolby.com/medals.php',
-    '猫站|https://pterclub.net/medal.php',
-    '梓喵|https://azusa.wiki/medal.php',
-    'Ultra|https://ultrahd.net/medal.php',
-    '熊猫|https://pandapt.net/medal.php',
-    '烧包|https://ptsbao.club/medal.php',
-    '时光|https://hdtime.org/medal.php',
-    '优比|https://ubits.club/medal.php',
-    '麒麟|https://www.hdkyl.in/medal.php',
-    '1pt|https://1ptba.com/medal.php',
-    '库菲|https://kufei.org/medal.php',
-    '咖啡|https://ptcafe.club/medal.php',
-    '野马|https://www.yemapt.org/#/consumer/badge',
-    '青蛙|https://qingwapt.com/medal.php',
-    '雨|https://raingfh.top/medal.php',
-    '织梦|https://zmpt.cc/medal.php',
-    'ptfans|https://ptfans.cc/medal.php',
-    '葡萄汁|https://ptzone.xyz/medal.php',
-    '蟹黄堡|https://crabpt.vip/medal.php',
-    '劳改所|https://ptlgs.org/medal.php',
-    'GGPT|https://www.gamegamept.com/medal.php',
-    'OKPT|https://www.okpt.net/medal.php',
-    '蝶粉|https://discfan.net/medal.php',
-    '车站|https://carpt.net/medal.php',
-    '末日|https://www.agsvpt.com/medal.php',
-    '杏坛|https://xingtan.one/medal.php',
-    '红豆饭|https://hdfans.org/medal.php',
-    '农场|https://pt.0ff.cc/medal.php',
-    '憨憨|https://hhanclub.net/medal.php',
-    '大青虫|https://cyanbug.net/medal.php',
-    'sunny|https://sunnypt.top/medal.php',
-    '红豆包|https://hdbao.cc/medal.php',
-    '老师|https://www.nicept.net/medal.php',
-    '星陨阁|https://pt.xingyungept.org/medal.php',
-    '财神|https://cspt.cc/medal.php',
-    '冬樱|https://wintersakura.net/medal.php',
-    '柠檬不甜|https://lemonhd.net/medal.php',
-    '独自|https://pt.hdclone.top/medal.php',
-    '电磁炮|https://bilibili.download/medal.php',
-    '下水道|https://sewerpt.com/medal.php',
-    '龟|https://kamept.com/medal.php',
-    '猪猪|https://piggo.me/medal.php',
-    '海棠|https://www.htpt.cc/buycenter.php',
-    '樱花|https://pt.ying.us.kg/medal.php',
-    'pts|https://www.ptskit.org/medal.php',
-    '三月|https://duckboobee.org/medal.php',
-    '垃圾堆|https://pt.lajidui.top/medal.php',
-    '13city|https://13city.org/medal.php',
-    '藏宝阁|https://cangbao.ge/medal.php',
-    '爱玲|https://pt.aling.de/medal.php',
-    '龙|https://longpt.org/medal.php',
-    '思齐|https://si-qi.xyz/medal.php',
-    'luck|https://pt.luckpt.de/medal.php',
-    '好学|https://www.hxpt.org/medal.php',
-    'nova|https://pt.novahd.top/medal.php',
-    '昆仑|https://www.yhpp.cc/medal.php',
-    '暮雪阁|https://pt.muxuege.org/medal.php',
-    '太乙|https://pt.tey.cc/medal.php',
-    '自然|https://zrpt.cc/medal.php',
-    '天枢|https://dubhe.site/medal.php',
-    '瞬间|https://www.momentpt.top/medal.php',
-    'hdv|https://hdvideo.top/medal.php',
-    '躺平|https://www.tangpt.top/medal.php',
-    '包子|https://p.t-baozi.cc/medal.php',
-    '肉丝|https://rousi.pro/medals',
-    '爱萝莉|https://mua.xloli.cc/medal.php',
-    'playlet|https://playlet.cc/medal.php',
-    'DPS|https://dstudio.me/medal.php',
+   '春天|https://springsunday.net/badges.php',
+   '杜比|https://www.hddolby.com/medals.php',
+   '猫站|https://pterclub.net/medal.php',
+   '梓喵|https://azusa.wiki/medal.php',
+   'Ultra|https://ultrahd.net/medal.php',
+   '熊猫|https://pandapt.net/medal.php',
+   '烧包|https://ptsbao.club/medal.php',
+   '时光|https://hdtime.org/medal.php',
+   '优比|https://ubits.club/medal.php',
+   '麒麟|https://www.hdkyl.in/medal.php',
+   '1pt|https://1ptba.com/medal.php',
+   '库菲|https://kufei.org/medal.php',
+   '咖啡|https://ptcafe.club/medal.php',
+   '野马|https://www.yemapt.org/#/consumer/badge',
+   '青蛙|https://qingwapt.com/medal.php',
+   '雨|https://raingfh.top/medal.php',
+   '织梦|https://zmpt.cc/medal.php',
+   'ptfans|https://ptfans.cc/medal.php',
+   '葡萄汁|https://ptzone.xyz/medal.php',
+   '蟹黄堡|https://crabpt.vip/medal.php',
+   '劳改所|https://ptlgs.org/medal.php',
+   'GGPT|https://www.gamegamept.com/medal.php',
+   'OKPT|https://www.okpt.net/medal.php',
+   '蝶粉|https://discfan.net/medal.php',
+   '车站|https://carpt.net/medal.php',
+   '末日|https://www.agsvpt.com/medal.php',
+   '杏坛|https://xingtan.one/medal.php',
+   '红豆饭|https://hdfans.org/medal.php',
+   '农场|https://pt.0ff.cc/medal.php',
+   '憨憨|https://hhanclub.net/medal.php',
+   '大青虫|https://cyanbug.net/medal.php',
+   'sunny|https://sunnypt.top/medal.php',
+   '红豆包|https://hdbao.cc/medal.php',
+   '老师|https://www.nicept.net/medal.php',
+   '星陨阁|https://pt.xingyungept.org/medal.php',
+   '财神|https://cspt.cc/medal.php',
+   '冬樱|https://wintersakura.net/medal.php',
+   '柠檬不甜|https://lemonhd.net/medal.php',
+   '独自|https://pt.hdclone.top/medal.php',
+   '电磁炮|https://bilibili.download/medal.php',
+   '下水道|https://sewerpt.com/medal.php',
+   '龟|https://kamept.com/medal.php',
+   '猪猪|https://piggo.me/medal.php',
+   '海棠|https://www.htpt.cc/buycenter.php',
+   '樱花|https://pt.ying.us.kg/medal.php',
+   'pts|https://www.ptskit.org/medal.php',
+   '三月|https://duckboobee.org/medal.php',
+   '垃圾堆|https://pt.lajidui.top/medal.php',
+   '13city|https://13city.org/medal.php',
+   '藏宝阁|https://cangbao.ge/medal.php',
+   '爱玲|https://pt.aling.de/medal.php',
+   '龙|https://longpt.org/medal.php',
+   '思齐|https://si-qi.xyz/medal.php',
+   'luck|https://pt.luckpt.de/medal.php',
+   '好学|https://www.hxpt.org/medal.php',
+   'nova|https://pt.novahd.top/medal.php',
+   '昆仑|https://www.yhpp.cc/medal.php',
+   '暮雪阁|https://pt.muxuege.org/medal.php',
+   '太乙|https://pt.tey.cc/medal.php',
+   '自然|https://zrpt.cc/medal.php',
+   '天枢|https://dubhe.site/medal.php',
+   '瞬间|https://www.momentpt.top/medal.php',
+   'hdv|https://hdvideo.top/medal.php',
+   '躺平|https://www.tangpt.top/medal.php',
+   '包子|https://p.t-baozi.cc/medal.php',
+   '肉丝|https://rousi.pro/medals',
+   '爱萝莉|https://mua.xloli.cc/medal.php',
+   'playlet|https://playlet.cc/medal.php',
+   'DPS|https://dstudio.me/medal.php',
   ];
 
   const state = {
@@ -182,87 +182,114 @@
 
   function extractMedalsFromCards(html) {
     const medals = [];
-    const startTag = '<div class="medal-cards">';
-    const startIdx = html.indexOf(startTag);
-    if (startIdx < 0) return medals;
-
-    let depth = 0;
-    let endIdx = -1;
-    for (let i = startIdx; i < html.length; i++) {
-      if (html[i] !== '<') continue;
-      const tagEnd = html.indexOf('>', i);
-      if (tagEnd < 0) break;
-      const tag = html.substring(i, tagEnd + 1);
-      if (tag.startsWith('<div ') || tag.startsWith('<div>')) depth++;
-      else if (tag.startsWith('</div>')) {
-        depth--;
-        if (depth === 0) {
-          endIdx = tagEnd + 1;
-          break;
-        }
-      }
-      i = tagEnd;
-    }
-    if (endIdx < 0) return medals;
-
-    const section = html.substring(startIdx, endIdx);
     const cards = [];
-    let pos = 0;
-    while (pos < section.length) {
-      const cardStart = section.indexOf('<div class="medal-card ', pos);
-      if (cardStart < 0) break;
+    const cardTagRegex = /<div[^>]*\bclass=["']medal-card\b[^>]*>/gi;
+    let cardMatch;
 
-      let cardDepth = 0;
+    while ((cardMatch = cardTagRegex.exec(html)) !== null) {
+      const cardStart = cardMatch.index;
+      let d = 0;
       let cardEnd = -1;
-      for (let i = cardStart; i < section.length; i++) {
-        if (section[i] !== '<') continue;
-        const tagEnd = section.indexOf('>', i);
-        if (tagEnd < 0) break;
-        const tag = section.substring(i, tagEnd + 1);
-        if (tag.startsWith('<div ') || tag.startsWith('<div>')) cardDepth++;
-        else if (tag.startsWith('</div>')) {
-          cardDepth--;
-          if (cardDepth === 0) {
-            cardEnd = tagEnd + 1;
-            break;
+      for (let i = cardStart; i < html.length; i++) {
+        if (html[i] === '<') {
+          const tagEnd = html.indexOf('>', i);
+          if (tagEnd < 0) break;
+          const tag = html.substring(i, tagEnd + 1);
+          if (tag.startsWith('<div ') || tag.startsWith('<div>')) d++;
+          else if (tag.startsWith('</div>')) {
+            d--;
+            if (d === 0) {
+              cardEnd = tagEnd + 1;
+              break;
+            }
           }
+          i = tagEnd;
         }
-        i = tagEnd;
       }
-      if (cardEnd <= 0) break;
-      cards.push(section.substring(cardStart, cardEnd));
-      pos = cardEnd;
+      if (cardEnd > 0) {
+        cards.push(html.substring(cardStart, cardEnd));
+      }
     }
 
     for (const card of cards) {
-      const actionMatch = card.match(/<input[^>]*\bclass="btn buy"[^>]*\/?\s*>/i);
+      const actionMatch = card.match(/<(?:input|button)[^>]*\bclass="([^"]*\bbuy\b[^"]*)"[^>]*\/?\s*>/i);
       if (!actionMatch) continue;
 
       const actionHtml = actionMatch[0];
-      if (!actionHtml.includes('value="购买"') && !actionHtml.includes('value="購買"')) continue;
+      const isButton = actionHtml.startsWith('<button');
+
+      let hasPurchaseText = false;
+      if (isButton) {
+        const btnClose = card.indexOf('</button>', actionMatch.index);
+        if (btnClose < 0) continue;
+        const btnText = card.substring(actionMatch.index + actionHtml.length, btnClose).trim();
+        if (btnText.includes('购买') || btnText.includes('購買')) hasPurchaseText = true;
+      } else if (actionHtml.includes('value="购买"') || actionHtml.includes('value="購買"')) {
+        hasPurchaseText = true;
+      }
+      if (!hasPurchaseText) continue;
       if (actionHtml.includes('disabled')) continue;
 
       const dataIdMatch = actionHtml.match(/data-id="(\d+)"/);
       const medalId = dataIdMatch ? dataIdMatch[1] : '';
-      const nameMatch = card.match(/<div class="medal-name">([\s\S]*?)<\/div>/);
-      const name = nameMatch ? nameMatch[1].trim() : '';
+
+      let name = '';
+      const namePattern = /<(?:h[1-4]|div|span)\s+class="(?:medal-name|medal-title|medal-card__name)"[^>]*>([\s\S]*?)<\/(?:h[1-4]|div|span)>/i;
+      const nameMatch = card.match(namePattern);
+      if (nameMatch) {
+        name = nameMatch[1].trim();
+      } else {
+        const imgAlt = card.match(/<img[^>]*\balt="([^"]*)"[^>]*>/i);
+        if (imgAlt) name = imgAlt[1].trim();
+      }
+      if (!name) {
+        const fallbackH = card.match(/<h([1-4])[^>]*>([\s\S]*?)<\/h\1>/i);
+        if (fallbackH) name = fallbackH[2].replace(/<[^>]+>/g, '').trim().replace(/\s*\(#\d+\)\s*$/, '');
+      }
 
       let price = '';
       let duration = '';
       let bonus = '';
       let stock = '';
       let timeRange = '';
-      const fieldPairs = card.match(/<strong>([^<]+)<\/strong>([\s\S]*?)<\/div>/g) || [];
-      for (const pair of fieldPairs) {
-        const labelMatch = pair.match(/<strong>([^<]+)<\/strong>/);
-        const val = pair.replace(/<[^>]+>/g, '').replace(/：/g, ':').replace(/^[^:]*[:：]\s*/, '').trim();
-        if (!labelMatch) continue;
-        const label = labelMatch[1].replace(/[：:]/g, '').trim();
-        if (label.includes('价格') || label.includes('價格')) price = val;
-        else if (label.includes('有效期')) duration = val;
-        else if (label.includes('加成')) bonus = val;
-        else if (label.includes('库存') || label.includes('庫存')) stock = val;
-        else if (label.includes('可购买') || label.includes('可購買')) timeRange = val;
+      const labelValuePatterns = [
+        /<span\s+class="detail-label">([^<]*)<\/span>\s*<span\s+class="detail-value">([^<]*)<\/span>/gi,
+        /<span\s+class="meta-label">([^<]*)<\/span>\s*<span\s+class="meta-value">([^<]*)<\/span>/gi,
+        /<span\s+class="medal-card__label">([^<]*)<\/span>\s*<span\s+class="medal-card__value">([^<]*)<\/span>/gi,
+        /<div\s+class="meta-label">([^<]*)<\/div>\s*<div\s+class="meta-value">([^<]*)<\/div>/gi,
+        /<span\s+class="stat-label">([^<]*)<\/span>\s*<span\s+class="stat-value">([^<]*)<\/span>/gi
+      ];
+
+      for (const lvRegex of labelValuePatterns) {
+        lvRegex.lastIndex = 0;
+        let lvMatch;
+        while ((lvMatch = lvRegex.exec(card)) !== null) {
+          const label = lvMatch[1].trim();
+          const val = lvMatch[2].trim();
+          if (label.includes('价格') || label.includes('價格')) price = val;
+          else if (label.includes('有效期')) duration = val;
+          else if (label.includes('加成')) bonus = val;
+          else if (label.includes('库存') || label.includes('庫存')) stock = val;
+          else if (label.includes('可购买') || label.includes('可購買')) timeRange = val;
+        }
+      }
+
+      if (!price && !duration && !bonus && !stock && !timeRange) {
+        const fieldPairs = card.match(/<strong>([^<]+)<\/strong>([\s\S]*?)<\/div>/g) || [];
+        for (const pair of fieldPairs) {
+          const labelMatch = pair.match(/<strong>([^<]+)<\/strong>/);
+          if (!labelMatch) continue;
+          const label = labelMatch[1].replace(/[：:]/g, '').trim();
+          let val = pair.replace(/<[^>]+>/g, '');
+          const labelClean = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          val = val.replace(new RegExp('^' + labelClean + '\\s*[:：]?\\s*'), '').trim();
+          if (!val) val = pair.replace(/<[^>]+>/g, '').replace(/：/g, ':').replace(/^[^:]*[:：]\s*/, '').trim();
+          if (label.includes('价格') || label.includes('價格')) price = val;
+          else if (label.includes('有效期')) duration = val;
+          else if (label.includes('加成')) bonus = val;
+          else if (label.includes('库存') || label.includes('庫存')) stock = val;
+          else if (label.includes('可购买') || label.includes('可購買')) timeRange = val;
+        }
       }
 
       if (name) medals.push({ name, price, duration, bonus, stock, timeRange, medalId });
@@ -504,7 +531,7 @@
     if (!sites || sites.length === 0) return [];
 
     state.scanning = true;
-    setBusy(state.elements.scanBtn, true, '扫描中...');
+    setBusy(state.elements.scanBtn, true, '⏳ 扫描中...');
     if (!options.keepLog) clearLog();
     addLog(`开始扫描 ${sites.length} 个站点`);
 
@@ -556,7 +583,7 @@
     addLog('扫描完成');
 
     state.scanning = false;
-    setBusy(state.elements.scanBtn, false, '开始扫描');
+    setBusy(state.elements.scanBtn, false, '🚀 开始扫描');
     return results;
   }
 
@@ -595,7 +622,7 @@
     }
 
     state.detecting = true;
-    setBusy(state.elements.detectBtn, true, '检测中...');
+    setBusy(state.elements.detectBtn, true, '⏳ 检测中...');
     clearLog();
     addLog(`开始检测内置站点。油猴无法枚举 Cookie，这里以页面是否可访问作为判断，单站超时 ${Math.round(DETECT_TIMEOUT / 1000)} 秒。`);
 
@@ -647,7 +674,7 @@
     `;
     addLog(`内置站点检测完成：新增 ${newSites.length} 个站点`);
     state.detecting = false;
-    setBusy(state.elements.detectBtn, false, '检测内置站点');
+    setBusy(state.elements.detectBtn, false, '🔍 检测内置站点');
   }
 
   function getFilteredSites(results) {
@@ -706,12 +733,12 @@
     const scanFailures = state.scanFailures || [];
 
     if (results.length === 0) {
-      resultList.innerHTML = '<div class="ptms-empty">暂无扫描结果</div>';
+      resultList.innerHTML = '<div class="ptms-empty">🎯 点击扫描按钮开始检测</div>';
       resultStats.innerHTML = `
         <div class="ptms-stats-main">
-          <span>有效站点：<strong>0</strong></span>
-          <span>总勋章数：<strong>0</strong></span>
-          <span>当前显示：<strong>0</strong></span>
+          <span>🎯 有效站点：<strong>0</strong></span>
+          <span>🏅 总勋章数：<strong>0</strong></span>
+          <span>👁️ 当前显示：<strong>0</strong></span>
         </div>
         ${renderSiteLinkList('扫描失败：', scanFailures)}
       `;
@@ -726,13 +753,14 @@
     resultStats.innerHTML = `
       <div class="ptms-stats-main">
         ${[
-          `<span>有效站点：<strong>${validResults.length}</strong></span>`,
-          `<span>总勋章数：<strong>${totalBadges}</strong></span>`,
-          `<span>当前显示：<strong>${totalVisible}</strong></span>`,
-          state.diffMode ? `<span>新增：<strong>${totalNew}</strong></span>` : '',
-          state.filterPermanent ? '<span>仅永久</span>' : '',
-          state.filterLimited ? '<span>仅限时</span>' : '',
-          state.filterPositive ? '<span>仅正收益</span>' : ''
+          `<span>🎯 有效站点：<strong>${validResults.length}</strong></span>`,
+          `<span>🏅 总勋章数：<strong class="ptms-total-badges">${totalBadges}</strong></span>`,
+          `<span>👁️ 当前显示：<strong>${totalVisible}</strong></span>`,
+          state.diffMode ? `<span>🆕 新增勋章：<strong class="ptms-new-count">${totalNew}</strong></span>` : '',
+          state.diffMode ? '<span class="ptms-stats-note">差异模式下仅显示新增勋章</span>' : '',
+          state.filterPermanent ? '<span class="ptms-stats-note">♾️ 仅永久勋章</span>' : '',
+          state.filterLimited ? '<span class="ptms-stats-note">⏳ 仅限时售卖</span>' : '',
+          state.filterPositive ? '<span class="ptms-stats-note">📈 仅正收益</span>' : ''
         ].filter(Boolean).join('')}
       </div>
       ${renderSiteLinkList('扫描失败：', scanFailures)}
@@ -750,7 +778,7 @@
         <div class="ptms-result-head">
           <div>
             <strong>${escapeHtml(site.siteName)}</strong>
-            <a href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(site.url)}</a>
+            <a href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer" title="点击跳转到勋章页面">🔗 ${escapeHtml(site.url)}</a>
           </div>
           <span>${site.medals.length} 勋章</span>
         </div>
@@ -763,19 +791,19 @@
         const isNew = state.diffMode && diffMap[site.siteName] && diffMap[site.siteName].has(fp);
         const medalUrl = medal.medalId ? `${site.url}${site.url.includes('?') ? '&' : '?'}medal=${encodeURIComponent(medal.medalId)}` : site.url;
         const meta = [];
-        if (medal.price) meta.push(`<span>价格：${escapeHtml(medal.price)}</span>`);
-        if (medal.duration) meta.push(`<span>有效期：${escapeHtml(medal.duration)}</span>`);
-        if (medal.bonus) meta.push(`<span>加成：${escapeHtml(medal.bonus)}</span>`);
-        if (medal.stock) meta.push(`<span>库存：${escapeHtml(medal.stock)}</span>`);
+        if (medal.price) meta.push(`<span class="ptms-meta-price">💰 ${escapeHtml(medal.price)}</span>`);
+        if (medal.duration) meta.push(`<span class="ptms-meta-duration">⏱ ${escapeHtml(medal.duration)}</span>`);
+        if (medal.bonus) meta.push(`<span class="ptms-meta-bonus">📈 ${escapeHtml(medal.bonus)}</span>`);
+        if (medal.stock) meta.push(`<span class="ptms-meta-stock">📦 ${escapeHtml(medal.stock)}</span>`);
 
         const medalEl = document.createElement('div');
         medalEl.className = `ptms-medal${isNew ? ' ptms-new' : ''}`;
         medalEl.innerHTML = `
-          <a href="${escapeHtml(medalUrl)}" target="_blank" rel="noopener noreferrer">
+          <a href="${escapeHtml(medalUrl)}" target="_blank" rel="noopener noreferrer" title="点击跳转到领取页面">
             ${escapeHtml(medal.name)}${isNew ? '<em>NEW</em>' : ''}
           </a>
           <div class="ptms-meta">${meta.join('')}</div>
-          ${medal.timeRange && medal.timeRange !== '不限' ? `<div class="ptms-time-range">可购买时间：${escapeHtml(medal.timeRange)}</div>` : ''}
+          ${medal.timeRange && medal.timeRange !== '不限' ? `<div class="ptms-time-range">🕐 可购买时间: ${escapeHtml(medal.timeRange)}</div>` : ''}
         `;
         list.appendChild(medalEl);
       });
@@ -994,14 +1022,14 @@
       addLog('请先填写 Webhook URL', true);
       return;
     }
-    setBusy(state.elements.testWebhookBtn, true, '发送中...');
+    setBusy(state.elements.testWebhookBtn, true, '⏳ 发送中...');
     try {
       await sendToFeishu(webhookUrl, [], formatScanTime(new Date()));
       addLog('测试推送成功');
     } catch (error) {
       addLog(`测试推送失败：${error.message}`, true);
     } finally {
-      setBusy(state.elements.testWebhookBtn, false, '测试推送');
+      setBusy(state.elements.testWebhookBtn, false, '📤 测试推送');
     }
   }
 
@@ -1022,62 +1050,87 @@
     const root = document.createElement('div');
     root.id = 'ptms-root';
     root.innerHTML = `
-      <button type="button" id="ptms-launcher" title="打开 PT 勋章扫描器">PT</button>
+      <button type="button" id="ptms-launcher" title="打开 PT 勋章扫描器">🏅</button>
       <div id="ptms-overlay" hidden>
         <div class="ptms-panel" role="dialog" aria-modal="true" aria-label="PT 勋章扫描器">
           <header class="ptms-header">
-            <div>
-              <h2>PT 勋章扫描器</h2>
-              <p>油猴版使用 GM_xmlhttpRequest 请求页面，Cookie 由浏览器随请求发送。</p>
-            </div>
+            <div class="ptms-header-icon">🏅</div>
+            <h2>PT 勋章扫描器</h2>
+            <span class="ptms-subtitle">批量检测各站点可购买勋章</span>
             <button type="button" id="ptms-close" class="ptms-icon-btn" title="关闭">x</button>
           </header>
-          <main class="ptms-body">
-            <section class="ptms-config">
-              <div class="ptms-section-title">站点配置</div>
-              <div class="ptms-stack">
-                <button type="button" id="ptms-detect">检测内置站点</button>
-                <button type="button" id="ptms-load-defaults">载入全部内置站点</button>
+          <main class="ptms-main-container">
+            <section class="ptms-card ptms-config">
+              <h3>站点配置</h3>
+              <div class="ptms-action-buttons">
+                <button type="button" id="ptms-detect" class="ptms-btn-detect">🔍 检测内置站点</button>
+                <button type="button" id="ptms-load-defaults" class="ptms-btn-open">📋 载入全部内置站点</button>
               </div>
-              <div id="ptms-detect-summary" class="ptms-hint">油猴版不能读取其它域名 Cookie，检测结果以页面是否可访问为准。</div>
+              <div id="ptms-detect-summary" class="ptms-config-tip">油猴版不能读取其它域名 Cookie，检测结果以页面是否可访问为准。</div>
               <textarea id="ptms-sites" spellcheck="false" placeholder="格式：站点名称|完整URL&#10;示例：&#10;春天PT|https://springpt.net/medal.php"></textarea>
-              <div class="ptms-row">
-                <button type="button" id="ptms-import">导入</button>
-                <button type="button" id="ptms-export">导出</button>
-                <button type="button" id="ptms-save">保存</button>
-              </div>
-              <div class="ptms-section-title">推送和定时</div>
-              <label class="ptms-check"><input type="checkbox" id="ptms-schedule-enabled"> 启用定时</label>
-              <div class="ptms-row">
-                <input type="time" id="ptms-schedule-time" value="08:00">
-                <span id="ptms-schedule-status" class="ptms-status">已禁用</span>
-              </div>
-              <input type="url" id="ptms-webhook-url" placeholder="飞书机器人 Webhook URL">
-              <div class="ptms-row">
-                <button type="button" id="ptms-save-schedule">保存定时</button>
-                <button type="button" id="ptms-test-webhook">测试推送</button>
+              <div class="ptms-action-buttons">
+                <button type="button" id="ptms-import" class="ptms-btn-import">⬆️ 导入</button>
+                <button type="button" id="ptms-export" class="ptms-btn-export">⬇️ 导出</button>
+                <button type="button" id="ptms-save" class="ptms-btn-save">💾 保存</button>
               </div>
             </section>
-            <section class="ptms-work">
-              <div class="ptms-toolbar">
-                <button type="button" id="ptms-scan" class="ptms-primary">开始扫描</button>
-                <button type="button" id="ptms-open-all">打开全部站点</button>
-                <button type="button" id="ptms-open-filtered">打开过滤结果</button>
-                <button type="button" id="ptms-debug-export">导出调试包</button>
-                <button type="button" id="ptms-clear">清除结果</button>
+
+            <section class="ptms-card ptms-work">
+              <h3>扫描控制</h3>
+              <div class="ptms-action-buttons">
+                <button type="button" id="ptms-scan" class="ptms-btn-scan">🚀 开始扫描</button>
+                <button type="button" id="ptms-open-all" class="ptms-btn-open">🌐 打开全部站点</button>
+                <button type="button" id="ptms-open-filtered" class="ptms-btn-open">🔍 打开过滤结果</button>
               </div>
-              <div class="ptms-toolbar ptms-filters">
-                <button type="button" id="ptms-diff">差异模式</button>
-                <button type="button" id="ptms-filter-permanent">永久勋章</button>
-                <button type="button" id="ptms-filter-limited">限时售卖</button>
-                <button type="button" id="ptms-filter-positive">正收益</button>
+              <div class="ptms-action-buttons ptms-filters">
+                <button type="button" id="ptms-diff" class="ptms-btn-diff">🔄 差异模式</button>
+                <button type="button" id="ptms-filter-permanent" class="ptms-btn-filter">♾️ 永久勋章</button>
+                <button type="button" id="ptms-filter-limited" class="ptms-btn-filter">⏳ 限时售卖</button>
+                <button type="button" id="ptms-filter-positive" class="ptms-btn-filter">📈 正收益</button>
+                <button type="button" id="ptms-debug-export" class="ptms-btn-debug">🐛 导出调试包</button>
               </div>
-              <div id="ptms-result-stats" class="ptms-stats"></div>
-              <div id="ptms-result-list" class="ptms-results"></div>
-              <div class="ptms-section-title">实时日志</div>
+
+              <h3 class="ptms-log-title">实时日志</h3>
               <div id="ptms-log" class="ptms-log"></div>
             </section>
+
+            <section class="ptms-card ptms-results-card">
+              <h3 class="ptms-result-title">
+                <span>扫描结果</span>
+                <button type="button" id="ptms-clear" class="ptms-btn-clear">🗑️ 清除结果</button>
+              </h3>
+              <div class="ptms-result-box">
+                <div id="ptms-result-list" class="ptms-results"></div>
+                <div id="ptms-result-stats" class="ptms-stats"></div>
+              </div>
+            </section>
           </main>
+
+          <section class="ptms-card ptms-schedule-card">
+            <h3>⏰ 定时任务配置</h3>
+            <div class="ptms-schedule-row">
+              <label>启用定时</label>
+              <label class="ptms-toggle-switch">
+                <input type="checkbox" id="ptms-schedule-enabled">
+                <span class="ptms-toggle-slider"></span>
+              </label>
+              <span id="ptms-schedule-status" class="ptms-status">已禁用</span>
+            </div>
+            <div class="ptms-schedule-row">
+              <label>执行时间</label>
+              <input type="time" id="ptms-schedule-time" value="08:00">
+              <span class="ptms-hint-inline">每日固定时间自动扫描；油猴版仅在页面打开期间有效</span>
+            </div>
+            <div class="ptms-schedule-row">
+              <label>Webhook URL</label>
+              <input type="url" id="ptms-webhook-url" placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxx">
+              <span class="ptms-hint-inline">飞书机器人 webhook 地址</span>
+            </div>
+            <div class="ptms-action-buttons">
+              <button type="button" id="ptms-save-schedule" class="ptms-btn-save">💾 保存定时配置</button>
+              <button type="button" id="ptms-test-webhook" class="ptms-btn-scan">📤 测试推送</button>
+            </div>
+          </section>
         </div>
       </div>
     `;
@@ -1135,10 +1188,10 @@
       renderResults([]);
       addLog('已清除扫描结果和历史记录');
     });
-    root.querySelector('#ptms-diff').addEventListener('click', event => toggleFilter('diffMode', event.currentTarget, '差异模式 已启用', '差异模式'));
-    root.querySelector('#ptms-filter-permanent').addEventListener('click', event => toggleFilter('filterPermanent', event.currentTarget, '永久勋章 已启用', '永久勋章'));
-    root.querySelector('#ptms-filter-limited').addEventListener('click', event => toggleFilter('filterLimited', event.currentTarget, '限时售卖 已启用', '限时售卖'));
-    root.querySelector('#ptms-filter-positive').addEventListener('click', event => toggleFilter('filterPositive', event.currentTarget, '正收益 已启用', '正收益'));
+    root.querySelector('#ptms-diff').addEventListener('click', event => toggleFilter('diffMode', event.currentTarget, '🔄 差异模式 ✓', '🔄 差异模式'));
+    root.querySelector('#ptms-filter-permanent').addEventListener('click', event => toggleFilter('filterPermanent', event.currentTarget, '♾️ 永久勋章 ✓', '♾️ 永久勋章'));
+    root.querySelector('#ptms-filter-limited').addEventListener('click', event => toggleFilter('filterLimited', event.currentTarget, '⏳ 限时售卖 ✓', '⏳ 限时售卖'));
+    root.querySelector('#ptms-filter-positive').addEventListener('click', event => toggleFilter('filterPositive', event.currentTarget, '📈 正收益 ✓', '📈 正收益'));
     root.querySelector('#ptms-save-schedule').addEventListener('click', saveSchedule);
     root.querySelector('#ptms-test-webhook').addEventListener('click', testWebhook);
     state.elements.scheduleEnabled.addEventListener('change', renderScheduleStatus);
@@ -1151,378 +1204,706 @@
   function injectStyle() {
     const style = document.createElement('style');
     style.textContent = `
-      #ptms-root, #ptms-root * { box-sizing: border-box; }
-      #ptms-launcher {
+      #ptms-root, #ptms-root * {
+        box-sizing: border-box;
+        letter-spacing: 0;
+      }
+
+      #ptms-overlay[hidden] {
+        display: none !important;
+      }
+
+      #ptms-root {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+
+      #ptms-root button {
+        padding: 9px 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font: 500 13px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s, background 0.2s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        white-space: nowrap;
+      }
+
+      #ptms-root button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      }
+
+      #ptms-root button:active {
+        transform: translateY(0);
+      }
+
+      #ptms-root button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      #ptms-root #ptms-launcher {
         position: fixed;
         right: 18px;
         bottom: 18px;
         z-index: 2147483646;
         width: 42px;
         height: 42px;
-        border: 0;
-        border-radius: 8px;
-        background: #2f6fed;
+        padding: 0;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: #fff;
-        font: 700 14px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        cursor: pointer;
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+        font-size: 21px;
+        box-shadow: 0 8px 24px rgba(102,126,234,0.35);
       }
+
       #ptms-overlay {
         position: fixed;
         inset: 0;
         z-index: 2147483647;
-        background: rgba(15, 23, 42, 0.46);
         padding: 22px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: #1f2937;
+        overflow: auto;
+        background: rgba(15, 23, 42, 0.46);
+        color: #2c3e50;
       }
+
       .ptms-panel {
         width: min(1160px, calc(100vw - 44px));
-        height: min(820px, calc(100vh - 44px));
+        max-height: calc(100vh - 44px);
         margin: 0 auto;
-        background: #f8fafc;
-        border-radius: 8px;
-        overflow: hidden;
+        padding: 30px;
+        overflow: auto;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f0 100%);
         box-shadow: 0 24px 72px rgba(15, 23, 42, 0.32);
-        border: 1px solid rgba(148, 163, 184, 0.32);
-        display: flex;
-        flex-direction: column;
       }
+
       .ptms-header {
-        min-height: 72px;
-        padding: 16px 20px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #e5e7eb;
-        background: #fff;
+        gap: 12px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid rgba(0,0,0,0.06);
       }
+
+      .ptms-header-icon {
+        width: 42px;
+        height: 42px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: white;
+        flex: 0 0 auto;
+      }
+
       .ptms-header h2 {
         margin: 0;
-        font-size: 19px;
+        color: #2c3e50;
+        font-size: 20px;
+        font-weight: 700;
         line-height: 1.2;
-        color: #111827;
       }
-      .ptms-header p {
-        margin: 5px 0 0;
-        font-size: 12px;
-        color: #6b7280;
+
+      .ptms-subtitle {
+        color: #888;
+        font-size: 13px;
+        margin-left: auto;
       }
-      .ptms-icon-btn {
+
+      #ptms-root .ptms-icon-btn {
         width: 34px;
         height: 34px;
-        border: 1px solid #d1d5db;
-        background: #fff;
-        color: #374151;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      .ptms-body {
-        min-height: 0;
-        flex: 1;
-        display: grid;
-        grid-template-columns: 360px 1fr;
-      }
-      .ptms-config, .ptms-work {
-        min-height: 0;
-        padding: 16px;
-        overflow: auto;
-      }
-      .ptms-config {
-        border-right: 1px solid #e5e7eb;
-        background: #fff;
-      }
-      .ptms-section-title {
-        margin: 2px 0 10px;
-        font-size: 13px;
-        font-weight: 700;
-        color: #111827;
-      }
-      .ptms-row, .ptms-stack, .ptms-toolbar {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      .ptms-stack {
-        margin-bottom: 10px;
-      }
-      #ptms-root button {
-        min-height: 32px;
-        padding: 7px 11px;
-        border: 1px solid #cbd5e1;
-        background: #fff;
-        color: #1f2937;
-        border-radius: 6px;
-        cursor: pointer;
-        font: 500 12px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
-      #ptms-root button:hover {
-        border-color: #94a3b8;
-        background: #f8fafc;
-      }
-      #ptms-root button:disabled {
-        cursor: not-allowed;
-        opacity: 0.62;
-      }
-      #ptms-root #ptms-launcher {
-        min-height: 42px;
         padding: 0;
-        border: 0;
-        background: #2f6fed;
-        color: #fff;
-        border-radius: 8px;
-        font-weight: 700;
-      }
-      #ptms-root #ptms-launcher:hover {
-        border: 0;
-        background: #2459c7;
-      }
-      #ptms-root button.ptms-primary, #ptms-root button.ptms-active {
-        background: #2f6fed;
-        border-color: #2f6fed;
-        color: #fff;
-      }
-      .ptms-hint {
-        margin: 8px 0 10px;
-        padding: 10px;
-        background: #f1f5f9;
-        border: 1px dashed #cbd5e1;
-        border-radius: 6px;
-        color: #64748b;
-        font-size: 12px;
-        line-height: 1.5;
-      }
-      #ptms-sites {
-        width: 100%;
-        height: 240px;
-        margin: 0 0 12px;
-        resize: vertical;
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        padding: 10px;
-        background: #fbfdff;
-        color: #111827;
-        font: 12px/1.6 "SF Mono", Consolas, monospace;
-      }
-      #ptms-webhook-url, #ptms-schedule-time {
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        min-height: 32px;
-        padding: 7px 9px;
-        color: #111827;
+        border: 1px solid rgba(0,0,0,0.08);
         background: #fff;
-        font: 12px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #555;
+        font-size: 16px;
+        flex: 0 0 auto;
       }
-      #ptms-webhook-url {
-        width: 100%;
-        margin: 8px 0;
+
+      .ptms-main-container {
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        gap: 25px;
       }
-      .ptms-check {
+
+      .ptms-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        border: 1px solid rgba(0,0,0,0.04);
+      }
+
+      .ptms-config {
+        grid-row: span 2;
+      }
+
+      .ptms-card h3 {
+        color: #2c3e50;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0 0 16px;
         display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 13px;
-        color: #374151;
+        line-height: 1.3;
       }
-      .ptms-status {
-        color: #64748b;
-        font-size: 12px;
+
+      .ptms-card h3::before {
+        content: '';
+        width: 4px;
+        height: 18px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 2px;
+        display: inline-block;
+        flex: 0 0 auto;
       }
-      .ptms-status.ptms-active {
-        color: #15803d;
+
+      .ptms-action-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 16px 0;
+      }
+
+      .ptms-config > .ptms-action-buttons:first-of-type button {
+        flex: 1 1 150px;
+        padding: 11px;
+        font-size: 14px;
+      }
+
+      #ptms-root .ptms-btn-detect {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+      }
+
+      #ptms-root .ptms-btn-scan {
+        background: linear-gradient(135deg, #43e97b, #38f9d7);
+        color: #1a3a2a;
         font-weight: 600;
       }
-      .ptms-toolbar {
-        margin-bottom: 10px;
+
+      #ptms-root .ptms-btn-open {
+        background: #17a2b8;
+        color: white;
       }
-      .ptms-filters {
-        padding-bottom: 10px;
-        border-bottom: 1px solid #e5e7eb;
+
+      #ptms-root .ptms-btn-save {
+        background: #2196F3;
+        color: white;
       }
-      .ptms-stats {
-        min-height: 38px;
-        margin: 0 0 10px;
-        padding: 9px 10px;
-        background: #fff;
-        border: 1px solid #e5e7eb;
-        border-radius: 6px;
+
+      #ptms-root .ptms-btn-import {
+        background: #FF9800;
+        color: white;
+      }
+
+      #ptms-root .ptms-btn-export {
+        background: #9C27B0;
+        color: white;
+      }
+
+      #ptms-root .ptms-btn-diff,
+      #ptms-root .ptms-btn-filter {
+        background: #6c757d;
+        color: white;
+      }
+
+      #ptms-root .ptms-btn-diff.ptms-active {
+        background: #28a745;
+        color: white;
+      }
+
+      #ptms-root .ptms-btn-filter.ptms-active {
+        background: #17a2b8;
+        color: white;
+      }
+
+      #ptms-root .ptms-btn-debug {
+        background: #e91e63;
+        color: white;
+      }
+
+      #ptms-root .ptms-btn-clear {
+        background: #dc3545;
+        color: white;
         font-size: 12px;
-        color: #475569;
+        padding: 5px 10px;
+        margin-left: auto;
       }
-      .ptms-stats-main {
+
+      #ptms-sites {
+        width: 100%;
+        height: 220px;
+        padding: 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font: 12px/1.7 "SF Mono", "Fira Code", Consolas, monospace;
+        margin: 12px 0;
+        resize: vertical;
+        background: #fafbfc;
+        color: #555;
+      }
+
+      #ptms-sites:focus,
+      #ptms-webhook-url:focus,
+      #ptms-schedule-time:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .ptms-config-tip {
+        background: #fafbfc;
+        border-radius: 8px;
+        padding: 12px;
+        margin: 12px 0;
+        font-size: 12px;
+        color: #888;
+        border: 1px dashed #e0e0e0;
+        line-height: 1.6;
+      }
+
+      .ptms-config-tip strong {
+        color: #667eea;
+      }
+
+      .ptms-log-title {
+        margin-top: 10px !important;
+      }
+
+      .ptms-log {
+        height: 260px;
+        overflow-y: auto;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 14px;
+        background: #fafbfc;
+        color: #555;
+      }
+
+      .ptms-log-entry {
+        padding: 6px 10px;
+        margin: 4px 0;
+        background: white;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        font-size: 13px;
         display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px;
+        line-height: 1.45;
+      }
+
+      .ptms-log-entry.ptms-error {
+        color: #e53935;
+      }
+
+      .ptms-time {
+        color: #aaa;
+        font-size: 11px;
+        flex: 0 0 auto;
+      }
+
+      .ptms-result-title {
+        margin-bottom: 0 !important;
+      }
+
+      .ptms-result-title > span {
+        display: inline-flex;
         align-items: center;
       }
+
+      .ptms-result-box {
+        margin-top: 14px;
+        border: 1px solid #e8e8e8;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .ptms-results {
+        max-height: 420px;
+        overflow-y: auto;
+        padding: 16px;
+        background: #fff;
+      }
+
+      .ptms-empty {
+        text-align: center;
+        color: #9ca3af;
+        padding: 30px 20px;
+        font-size: 14px;
+      }
+
+      .ptms-result-site {
+        margin-bottom: 14px;
+        border: 1px solid #e8e8e8;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: box-shadow 0.2s;
+      }
+
+      .ptms-result-site:last-child {
+        margin-bottom: 0;
+      }
+
+      .ptms-result-site:hover {
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      }
+
+      .ptms-result-head {
+        padding: 10px 14px;
+        background: linear-gradient(135deg, #f8f9fc, #f0f2f7);
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      .ptms-result-head strong {
+        font-weight: 600;
+        font-size: 14px;
+        color: #2c3e50;
+      }
+
+      .ptms-result-head a {
+        font-size: 12px;
+        color: #667eea;
+        text-decoration: none;
+        margin-left: 8px;
+      }
+
+      .ptms-result-head a:hover {
+        text-decoration: underline;
+        color: #764ba2;
+      }
+
+      .ptms-result-head span {
+        color: #4CAF50;
+        font-weight: 700;
+        font-size: 13px;
+        background: rgba(76,175,80,0.08);
+        padding: 3px 10px;
+        border-radius: 12px;
+        white-space: nowrap;
+      }
+
+      .ptms-medals {
+        padding: 6px 14px;
+      }
+
+      .ptms-medal {
+        padding: 10px 12px;
+        margin: 4px 0;
+        background: #fafbfc;
+        border-radius: 6px;
+        font-size: 13px;
+        border-left: 3px solid #e0e0e0;
+        transition: background 0.2s, border-color 0.2s;
+      }
+
+      .ptms-medal:hover {
+        background: #f0f4f8;
+      }
+
+      .ptms-medal.ptms-new {
+        border-left-color: #FF9800;
+        background: #fff8e1;
+      }
+
+      .ptms-medal a {
+        font-weight: 500;
+        color: #2c3e50;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 13px;
+      }
+
+      .ptms-medal a:hover {
+        color: #667eea;
+        text-decoration: underline;
+      }
+
+      .ptms-medal em {
+        display: inline-block;
+        background: linear-gradient(135deg, #FF9800, #F44336);
+        color: white;
+        font-size: 10px;
+        padding: 2px 7px;
+        border-radius: 10px;
+        margin-left: 6px;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      .ptms-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 4px;
+        font-size: 12px;
+      }
+
+      .ptms-meta span {
+        white-space: nowrap;
+      }
+
+      .ptms-meta-price {
+        color: #e65100;
+        font-weight: 500;
+      }
+
+      .ptms-meta-duration {
+        color: #1565C0;
+      }
+
+      .ptms-meta-bonus {
+        color: #2e7d32;
+      }
+
+      .ptms-meta-stock {
+        color: #6a1b9a;
+      }
+
+      .ptms-time-range {
+        font-size: 11px;
+        color: #888;
+        margin-top: 2px;
+      }
+
+      .ptms-stats {
+        background: linear-gradient(135deg, rgba(76,175,80,0.06), rgba(102,126,234,0.04));
+        padding: 14px 16px;
+        border-top: 1px solid #eee;
+        font-size: 13px;
+        color: #555;
+      }
+
+      .ptms-stats-main {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .ptms-total-badges {
+        color: #4CAF50;
+      }
+
+      .ptms-new-count {
+        color: #FF9800;
+      }
+
+      .ptms-stats-note {
+        color: #17a2b8;
+        font-size: 12px;
+      }
+
       .ptms-site-link-list {
         width: 100%;
         margin-top: 8px;
         padding-top: 8px;
-        border-top: 1px dashed #dbe2ea;
+        border-top: 1px dashed #e0e0e0;
         display: flex;
         gap: 8px;
         flex-wrap: wrap;
         align-items: center;
-        color: #64748b;
+        color: #888;
         line-height: 1.5;
       }
+
       .ptms-site-link-list b {
-        color: #334155;
+        color: #555;
       }
+
       .ptms-site-link-empty {
         border-top: 0;
         padding-top: 0;
       }
+
       .ptms-site-link-item {
         display: inline-flex;
         align-items: center;
         gap: 5px;
         max-width: 100%;
         padding: 3px 7px;
-        border: 1px solid #e5e7eb;
-        background: #f8fafc;
+        border: 1px solid #e8e8e8;
+        background: #fafbfc;
         border-radius: 5px;
       }
+
       .ptms-site-link-item a {
-        color: #2f6fed;
+        color: #667eea;
         text-decoration: none;
       }
+
       .ptms-site-link-item a:hover {
         text-decoration: underline;
       }
-      .ptms-site-link-item small {
-        color: #94a3b8;
-      }
+
+      .ptms-site-link-item small,
       .ptms-no-link {
-        color: #94a3b8;
+        color: #aaa;
       }
-      .ptms-results {
-        max-height: 380px;
-        overflow: auto;
-        border: 1px solid #e5e7eb;
-        background: #fff;
-        border-radius: 6px;
-        margin-bottom: 14px;
+
+      .ptms-schedule-card {
+        margin-top: 25px;
       }
-      .ptms-empty {
-        padding: 28px;
-        text-align: center;
-        color: #94a3b8;
-        font-size: 13px;
-      }
-      .ptms-result-site {
-        border-bottom: 1px solid #e5e7eb;
-      }
-      .ptms-result-site:last-child {
-        border-bottom: 0;
-      }
-      .ptms-result-head {
+
+      .ptms-schedule-row {
         display: flex;
-        justify-content: space-between;
-        gap: 12px;
         align-items: center;
-        padding: 10px 12px;
-        background: #f8fafc;
-      }
-      .ptms-result-head strong {
-        display: inline-block;
-        margin-right: 8px;
-        color: #111827;
-        font-size: 13px;
-      }
-      .ptms-result-head a {
-        color: #2f6fed;
-        font-size: 12px;
-        text-decoration: none;
-      }
-      .ptms-result-head span {
-        color: #15803d;
-        font-weight: 700;
-        font-size: 12px;
-        white-space: nowrap;
-      }
-      .ptms-medals {
-        padding: 8px 12px;
-      }
-      .ptms-medal {
-        padding: 9px 10px;
-        margin: 6px 0;
-        background: #f8fafc;
-        border-left: 3px solid #cbd5e1;
-        border-radius: 6px;
-      }
-      .ptms-medal.ptms-new {
-        border-left-color: #f97316;
-        background: #fff7ed;
-      }
-      .ptms-medal a {
-        color: #111827;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 13px;
-      }
-      .ptms-medal a:hover {
-        color: #2f6fed;
-        text-decoration: underline;
-      }
-      .ptms-medal em {
-        margin-left: 6px;
-        padding: 1px 5px;
-        border-radius: 5px;
-        background: #f97316;
-        color: #fff;
-        font-size: 10px;
-        font-style: normal;
-      }
-      .ptms-meta {
-        display: flex;
-        flex-wrap: wrap;
         gap: 12px;
-        margin-top: 5px;
-        color: #475569;
-        font-size: 12px;
+        margin: 12px 0;
+        flex-wrap: wrap;
       }
-      .ptms-time-range {
-        margin-top: 5px;
-        color: #64748b;
-        font-size: 12px;
+
+      .ptms-schedule-row label {
+        font-size: 13px;
+        color: #555;
+        min-width: 80px;
+        font-weight: 500;
       }
-      .ptms-log {
-        height: 170px;
-        overflow: auto;
-        background: #0f172a;
-        border-radius: 6px;
-        padding: 9px;
-        color: #e2e8f0;
-        font: 12px/1.6 "SF Mono", Consolas, monospace;
+
+      #ptms-schedule-time,
+      #ptms-webhook-url {
+        padding: 8px 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 13px;
+        background: #fafbfc;
+        color: #555;
+        font-family: inherit;
       }
-      .ptms-log-entry {
-        display: flex;
-        gap: 8px;
+
+      #ptms-schedule-time {
+        font-size: 14px;
       }
-      .ptms-log-entry.ptms-error {
-        color: #fca5a5;
+
+      #ptms-webhook-url {
+        flex: 1;
+        min-width: 240px;
       }
-      .ptms-time {
-        color: #94a3b8;
-        flex: 0 0 auto;
+
+      .ptms-hint-inline {
+        font-size: 11px;
+        color: #aaa;
+        margin-left: 4px;
       }
-      @media (max-width: 860px) {
-        #ptms-overlay { padding: 8px; }
+
+      .ptms-toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
+        flex-shrink: 0;
+        min-width: 44px !important;
+      }
+
+      .ptms-toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .ptms-toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ccc;
+        border-radius: 24px;
+        transition: 0.3s;
+      }
+
+      .ptms-toggle-slider::before {
+        content: '';
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background: white;
+        border-radius: 50%;
+        transition: 0.3s;
+      }
+
+      .ptms-toggle-switch input:checked + .ptms-toggle-slider {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+      }
+
+      .ptms-toggle-switch input:checked + .ptms-toggle-slider::before {
+        left: auto;
+        right: 3px;
+        transform: none;
+      }
+
+      .ptms-status {
+        font-size: 13px;
+        color: #888;
+      }
+
+      .ptms-status.ptms-active {
+        color: #4CAF50;
+        font-weight: 500;
+      }
+
+      @media (max-width: 900px) {
+        #ptms-overlay {
+          padding: 8px;
+        }
+
         .ptms-panel {
           width: calc(100vw - 16px);
-          height: calc(100vh - 16px);
+          max-height: calc(100vh - 16px);
+          padding: 18px;
         }
-        .ptms-body {
+
+        .ptms-header {
+          align-items: flex-start;
+          gap: 10px;
+          margin-bottom: 18px;
+          padding-bottom: 16px;
+        }
+
+        .ptms-subtitle {
+          display: none;
+        }
+
+        .ptms-main-container {
           grid-template-columns: 1fr;
+          gap: 16px;
         }
+
         .ptms-config {
-          border-right: 0;
-          border-bottom: 1px solid #e5e7eb;
-          max-height: 45vh;
+          grid-row: auto;
+        }
+
+        .ptms-card {
+          padding: 18px;
+        }
+
+        .ptms-result-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        #ptms-webhook-url {
+          min-width: 100%;
         }
       }
     `;
